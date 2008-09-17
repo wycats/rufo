@@ -1,0 +1,19 @@
+require "rubygems"
+require "thor"
+require "flying_saucer"
+
+class Saucer < Thor
+
+  desc "fly", "create a PDF"
+  def fly(input, output = "out.pdf")
+    puts "Rendering PDF..."
+    input_file = "#{File.expand_path(input)}"
+    File.open(output, 'w') do |file|
+      ITextRenderer.new.make_pdf(input, file)
+    end
+    puts "Done."
+  end
+
+end
+
+Saucer.start
