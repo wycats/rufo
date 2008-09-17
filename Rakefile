@@ -3,12 +3,12 @@ require 'rake/gempackagetask'
 require 'rubygems/specification'
 require 'date'
 
-GEM = "flying_saucer"
-GEM_VERSION = "0.0.1"
-AUTHOR = "Your Name"
-EMAIL = "Your Email"
-HOMEPAGE = "http://example.com"
-SUMMARY = "A gem that provides..."
+GEM = "ufo"
+GEM_VERSION = "0.5.0"
+AUTHOR = "Yehuda Katz"
+EMAIL = "wycats@gmail.com"
+HOMEPAGE = "http://yehudakatz.com"
+SUMMARY = "A gem that provides a Ruby binding to the Java flying saucer library"
 
 spec = Gem::Specification.new do |s|
   s.name = GEM
@@ -30,7 +30,7 @@ spec = Gem::Specification.new do |s|
   
   s.require_path = 'lib'
   s.autorequire = GEM
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,specs}/**/*")
+  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,specs}/**/*")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
